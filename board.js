@@ -64,6 +64,7 @@ function Board(x,y) {
         tiles[3][4].setColor("black");
         tiles[4][3].setColor("black");
         tiles[4][4].setColor("white");
+
     };
 
     var getOccupiedTiles = function() {
@@ -84,7 +85,12 @@ function Board(x,y) {
         for(var i = -1; i < 2; i++) {
             for(var j = -1; j < 2; j++) {
                 if(i == 0 && j == 0) {continue;} // Skip self
-                arr.push(tiles[Number(coords[0]) + i][Number(coords[1]) + j]);
+                // If statement to make sure it exists (if at the edge of the board)
+                if(tiles[Number(coords[0]) + i]){
+                    if(tiles[Number(coords[0]) + i][Number(coords[1]) + j]) {
+                        arr.push(tiles[Number(coords[0]) + i][Number(coords[1]) + j]);
+                    }
+                }
             }
         }
         return arr;
@@ -104,6 +110,51 @@ function Board(x,y) {
         return OATs;
     };
 
+    var followPath = function(tile, nextTile) {
+        var color = nextTile.getColor();
+        tileCoords = tile.getCoords();
+        nextCoords = nextTile.getCoords();
+        var path = [tile, nextTile];
+        var step = [nextCoords[0] - tileCoords[0], nextCoords[1] - tileCoords[1]];
+        for(var i = 0; i < 9; i++) { // <<<<<<<<<< Change this loop later.
+            var next = tiles[Number(nextCoords[0]) + step[0]][ Number(nextCoords[1]) + step[1]];
+            if(!next) {return false;}
+            if(next.getColor() == "none") {return false;}
+            if(next.getColor() === color) {
+                path.push(next);
+                nextCoords = next.getCoords();
+            } else {
+                break;
+            }
+        }
+        return path;
+    };
+
+    var getLegality = function(tile, color) {
+
+        if(color == "black") { var otherColor = "white";}
+        else { var otherColor = "black";}
+        var adj = getAdjacentTiles(tile);
+        var paths = [];
+        for(var i = 0; i < adj.length; i++) {
+            if(adj[i].getColor() === otherColor) {
+                var path = followPath(tile,adj[i]);
+                if(path) {paths.push(path);}
+            }
+        }
+        if(paths.length > 0) { return paths;}
+        else {return false;}
+    };
+
+    this.getLegalTiles = function(color) {
+        var oats = this.getOATs();
+        var legalOatPaths = [];
+        for(var i = 0; i < oats.length; i++) {
+            var legalOatPath = getLegality(oats[i], color);
+            if(legalOatPath) {legalOatPaths.push(legalOatPath);}
+        }
+        return legalOatPaths;
+    };
 
     this.logTiles = function(){
         console.log("Logging Tiles: ");
