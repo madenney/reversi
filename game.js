@@ -5,19 +5,57 @@
 function Game() {
 
     var board;
-    var whiteScore = 0;
-    var blackScore = 0;
-    var turn = "black";
+    var rebelScore = 0;
+    var empireScore = 0;
+    var legalTiles;
+    var currentTurn = "black";
 
     var initialize = function() {
         board = new Board(8,8);
         board.setup();
-
-        x = board.getOATs();
-        for(var i = 0; i < x.length; i++) {
-            console.log(x[i].getId());
-        }
-
     };
+
+    var doTurn = function() {
+        // Get legal tiles and add click listeners to them
+        legalTiles = board.getLegalTiles(currentTurn);
+        console.log("--------------")
+        for(var i = 0; i < legalTiles.length; i++) {
+            setClickListener(legalTiles[i]);
+        }
+    };
+
+    var nextTurn = function(){
+        if(currentTurn == "black"){currentTurn = "white";}
+        else{currentTurn = "black";}
+        doTurn();
+    };
+
+    var setClickListener = function(paths) {
+        tile = $(paths[0][0].getJId());
+        tile.addClass("clickable");
+        tile.click(function() {
+            // Remove Clickable from legal tiles
+            for(var i = 0; i < legalTiles.length; i++) {
+                for(var j = 0; j < legalTiles[i].length; j++) {
+                    $(legalTiles[i][j][0].getJId()).removeClass("clickable").off();
+                }
+            }
+            // Flip tiles down the path
+            paths[0][0].setColor(currentTurn);
+            for(var i = 0; i < paths.length; i++){
+                for(var j = 1; j < paths[i].length; j++){
+                    paths[i][j].setColor(currentTurn); // This will be .flip() once that gets working
+                }
+            }
+            nextTurn();
+        });
+    };
+
+
+    this.getTurn= function() {
+        return currentTurn;
+    };
+
     initialize();
+    doTurn();
 }
