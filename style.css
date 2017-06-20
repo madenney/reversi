@@ -1,9 +1,88 @@
 body {
     font-size: 0px;
+
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/52032b31613113.5659c6254b7f5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
 }
 body > * {
     font-size: 12px;
 }
+
+@-webkit-keyframes blackcheckers {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes blackcheckers {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes blackcheckers { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+.blackgradient{
+    background: linear-gradient(32deg, #000000, #4c4b4f);
+    background-size: 400% 400%;
+    -webkit-animation: blackcheckers 23s ease infinite;
+    -moz-animation: blackcheckers 23s ease infinite;
+    animation: blackcheckers 23s ease infinite;
+}
+@-webkit-keyframes redcheckers {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@-moz-keyframes redcheckers {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@keyframes redcheckers { 
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+.redgradient{
+background: linear-gradient(32deg, #000000, #ff0000);
+background-size: 400% 400%;
+-webkit-animation: redcheckers 23s ease infinite;
+-moz-animation: redcheckers 23s ease infinite;
+animation: redcheckers 23s ease infinite;
+}
+#player1{
+    position: relative;
+    left: 10%;
+    height: 420px;
+    border: 4px #FFB03F solid;
+    background-color: black;
+    opacity: 0.75;
+}
+#player2{
+    position: relative;
+    float: right;
+    right: 10%;
+    height: 420px;
+    border: 4px #C50C2C solid;
+    background-color: black;
+    opacity: 0.60;
+}
+#board-container {
+    width: 45%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #board-container {
     width: 800px;
     height: 700px;
@@ -16,6 +95,7 @@ body > * {
     margin: auto;
     background-color: limegreen;
 }
+
 
 .tile-container {
     box-sizing: border-box;
@@ -41,6 +121,49 @@ body > * {
     background-color: black;
 }
 
+.row{
+    height: auto;
+    max-height: 400px;
+    width: 85%;
+}
+.square{
+    height: 9vh;
+    width: 16vw;
+    background-color: white;
+    border: 1px black solid;
+    overflow: hidden;
+}
+.title{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    background: -webkit-linear-gradient(#ff0000,#4c4b4f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+div h3{
+    text-align: center;
+    color: white;
+}
+#rebelScore, #empireScore{
+    text-align: center;
+}
+#rebelScore{
+    color: white;
+    border: 2px #FFB03F solid;
+    padding: 20px;
+    font-size: 30px;
+}
+#empireScore{
+    color: white;
+    border: 2px #C50C2C solid;
+    padding: 20px;
+    font-size: 30px;
+
+}
 .clickable {
     background-color: #ffba00;
 }
+

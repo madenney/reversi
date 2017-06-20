@@ -13,50 +13,38 @@ function Board(x,y) {
 
     var initialize = function() {
         console.log("Initializing Board Object");
-        var maxTileContainerWidth = 150;
 
-        // Get some values and do some math to find width of tile container
-        var boardWidth = $("#board-container").css("width").slice(0, -2);
-        boardWidth = boardWidth - $("#board-container").css("border-width").slice(0, 2);
-        var boardHeight = $("#board-container").css("height").slice(0, -2);
-        boardHeight = boardHeight - $("#board-container").css("border-width").slice(0, 2);
-        var potentialTileContainerWidth = boardWidth / cols;
-        var potentialTileContainerHeight = boardHeight / rows;
-        if (potentialTileContainerHeight < potentialTileContainerWidth) {
-            var tileContainerWidth = potentialTileContainerHeight;
-        } else {
-            var tileContainerWidth = potentialTileContainerWidth;
-        }
-        if (tileContainerWidth > maxTileContainerWidth) {
-            tileContainerWidth = maxTileContainerWidth;
-        }
-        //tileContainerWidth = Math.floor(tileContainerWidth);
-        console.log("tileContainerWidth: " + tileContainerWidth);
-        // Create board
-        var board = $("<div>").attr("id", "board");
-        board.css({"width": tileContainerWidth * cols, "height": tileContainerWidth * rows});
 
-        // Create tile containers
         for (var i = 0; i < rows; i++) {
             var row = [];
+            //creates one row using a variable 
+            var tr = $("<tr class='row'></tr>");
             for (var j = 0; j < cols; j++) {
-                // Create tile containers and add them to the board
-                var tileContainer = $("<div>").addClass("tile-container");
-                tileContainer.css({"width": tileContainerWidth, "height": tileContainerWidth});
-                var tileElement = $("<div>").addClass("tile");
-                var tileID = "" + i + "-" + j;
-                tileElement.attr("id", tileID);
-                tileContainer.text(tileID);
-                tileContainer.append(tileElement);
-                board.append(tileContainer);
-
-                // Create tile object and add it to the tiles array
                 var tile = new Tile(i, j);
+                //assigns a variable to an array of the coordinates for the individual boxes
+                var tileValue = tile.getCoords();
+                //creates checkered pattern for the individual boxes
+                if((tileValue[0]%2===0 && tileValue[1]%2===0) || (tileValue[0]%2===1 && tileValue[1]%2===1)){
+                    var identity = tile.getId();
+                    console.log(identity);
+                    tr.append("<td class='square blackgradient' id=" + identity + "></td>");   
+                }
+                else{
+                    var identity = tile.getId();
+                    console.log(identity);
+                    tr.append("<td class='square redgradient' id=" + identity + "></td>");   
+                }
+
+
                 row.push(tile);
             }
+            $('tbody').append(tr);
             tiles.push(row);
         }
-        $("#board-container").append(board);
+        console.log(tiles);
+
+
+
     };
 
     this.setup = function() {
@@ -64,7 +52,6 @@ function Board(x,y) {
         tiles[3][4].setColor("black");
         tiles[4][3].setColor("black");
         tiles[4][4].setColor("white");
-
     };
 
     var getOccupiedTiles = function() {
@@ -109,7 +96,6 @@ function Board(x,y) {
         }
         return OATs;
     };
-
     var followPath = function(tile, nextTile) {
         var color = nextTile.getColor();
         tileCoords = tile.getCoords();
@@ -155,6 +141,7 @@ function Board(x,y) {
         }
         return legalOatPaths;
     };
+
 
     this.logTiles = function(){
         console.log("Logging Tiles: ");

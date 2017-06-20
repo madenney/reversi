@@ -49,7 +49,6 @@ function Tile(x,y) {
         var arr = [id.substring(0,id.indexOf("-")), id.substring(id.indexOf("-")+1)];
         return arr;
     };
-
     this.log = function() {
         console.log(id + " " + color);
     };

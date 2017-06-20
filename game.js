@@ -5,6 +5,7 @@
 function Game() {
 
     var board;
+
     var rebelScore = 0;
     var empireScore = 0;
     var legalTiles;
@@ -58,4 +59,5 @@ function Game() {
 
     initialize();
     doTurn();
+
 }
