@@ -1,15 +1,18 @@
 body {
     font-size: 0px;
+
     background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/52032b31613113.5659c6254b7f5.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
 }
 body > * {
     font-size: 12px;
 }
+
 @-webkit-keyframes blackcheckers {
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
@@ -72,8 +75,6 @@ animation: redcheckers 23s ease infinite;
     opacity: 0.60;
 }
 #board-container {
-/*  height: 700px;
-    margin: 100px;*/
     width: 45%;
     position: fixed;
     right: 0;
@@ -81,6 +82,21 @@ animation: redcheckers 23s ease infinite;
     margin-right: auto;
     margin-left: auto;
 }
+
+#board-container {
+    width: 800px;
+    height: 700px;
+    margin: 100px;
+    background-color: gray;
+    border: solid black 2px;
+}
+
+#board {
+    margin: auto;
+    background-color: limegreen;
+}
+
+
 .tile-container {
     box-sizing: border-box;
     border: solid black 2px;
@@ -95,7 +111,6 @@ animation: redcheckers 23s ease infinite;
     border: solid black 2px;
     border-radius: 100%;
     box-sizing: border-box;
-    display: hidden;
 }
 
 .white {
@@ -105,6 +120,7 @@ animation: redcheckers 23s ease infinite;
 .black {
     background-color: black;
 }
+
 .row{
     height: auto;
     max-height: 400px;
@@ -147,50 +163,7 @@ div h3{
     font-size: 30px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.clickable {
+    background-color: #ffba00;
+}
 
