@@ -29,7 +29,7 @@ body > * {
     100%{background-position:0% 51%}
 }
 .blackgradient{
-    #background: linear-gradient(32deg, #000000, #4c4b4f);
+    background: linear-gradient(32deg, #000000, #4c4b4f);
     background-size: 400% 400%;
     -webkit-animation: blackcheckers 23s ease infinite;
     -moz-animation: blackcheckers 23s ease infinite;
@@ -51,7 +51,7 @@ body > * {
     100%{background-position:91% 0%}
 }
 .redgradient{
-    #background: linear-gradient(32deg, #000000, #ff0000);
+    background: linear-gradient(32deg, #000000, #ff0000);
     background-size: 400% 400%;
     -webkit-animation: redcheckers 23s ease infinite;
     -moz-animation: redcheckers 23s ease infinite;
@@ -166,4 +166,88 @@ div h3{
     -moz-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
     box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
 }
+/*Modal CSS*/
+
+.modal-content{
+    background-image: url('https://68.media.tumblr.com/1ee469a13252afb71de6d7670ea373c0/tumblr_nufjxs8TIs1suieauo1_500.gif');
+    background-size: cover;
+    margin: auto;
+    height: 80vh;
+    width: 83vw;
+    right: 38%;
+}
+.modal-header h1{
+    text-align: center;
+    font-family: san-serif Serif-Gothic;
+    color: yellow;
+    font-weight: bold;
+    font-size: 55px;
+}
+#rebeltitle{
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+#empiretitle{
+    display: inline;
+    text-align: center;
+    bottom: 15%;
+    float: top;
+
+}
+#rebelbutton{
+    background-image: url('https://s-media-cache-ak0.pinimg.com/originals/27/5b/ed/275bedfe662fc545fa77d32e511b0609.jpg');
+    background-position: center;  
+    background-size: 250%;
+    height: 40vh;
+    margin-left: 5%;
+    color: black;
+    font-weight: bold;
+    width: 97px;
+
+
+
+}
+#empirebutton{
+    background-image: url('https://vignette3.wikia.nocookie.net/starwars/images/3/37/Vader_TFU.jpg/revision/latest/scale-to-width-down/210?cb=20081111171655');
+    background-position: 24%95%;
+    background-size: 200%;
+    background-color: black;
+    height: 40vh;
+    background-repeat: no-repeat;
+    margin-right: 5%;
+    float: right;
+    width: 97px;
+
+}
+.cascade{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
