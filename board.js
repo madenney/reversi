@@ -26,17 +26,17 @@ function Board(x,y) {
                 var tileValue = tile.getCoords();
                 //creates checkered pattern for the individual boxes
                 var identity = tile.getId();
+                var buffer = $("<div>").addClass("buffer");
                 var t = $("<div>").attr("id", identity);
                 if((tileValue[0]%2===0 && tileValue[1]%2===0) || (tileValue[0]%2===1 && tileValue[1]%2===1)){
                     var td = $('<td class="square blackgradient"></td>');
-                    td.append(t);
-                    tr.append(td);
                 }
                 else{
                     var td = $("<td class='square redgradient' ></td>");
-                    td.append(t);
-                    tr.append(td);
                 }
+                buffer.append(t);
+                td.append(buffer);
+                tr.append(td);
                 row.push(tile);
             }
             $('tbody').append(tr);
@@ -98,10 +98,10 @@ function Board(x,y) {
         tileCoords = tile.getCoords();
         nextCoords = nextTile.getCoords();
         var path = [tile, nextTile];
-        var step = [nextCoords[0] - tileCoords[0], nextCoords[1] - tileCoords[1]];
+        var vector = [nextCoords[0] - tileCoords[0], nextCoords[1] - tileCoords[1]];
         for(var i = 0; i < 9; i++) { // <<<<<<<<<< Change this loop later.
-            if(!(tiles[Number(nextCoords[0]) + step[0]])) {return false;}
-            var next = tiles[Number(nextCoords[0]) + step[0]][ Number(nextCoords[1]) + step[1]];
+            if(!(tiles[Number(nextCoords[0]) + vector[0]])) {return false;}
+            var next = tiles[Number(nextCoords[0]) + vector[0]][ Number(nextCoords[1]) + vector[1]];
             if(!next) {return false;}
             if(next.getColor() == "none") {return false;}
             if(next.getColor() === color) {
@@ -172,5 +172,10 @@ function Board(x,y) {
         }
         return arr;
     };
+
+    this.getOccupiedCount = function() {
+        return getOccupiedTiles().length;
+    };
+
     initialize();
 }
