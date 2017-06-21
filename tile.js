@@ -17,18 +17,22 @@ function Tile(x,y) {
         $(jid).removeClass("black");
         if(inputColor == "white") {
             color = inputColor;
-            $(jid).addClass("white");
+            $(jid).addClass("white").addClass("tile");
         }
         if(inputColor == "black") {
             color = inputColor;
-            $(jid).addClass("black");
+            $(jid).addClass("black").addClass("tile");
         }
     };
 
-    this.flip = function() {
-        if(color === "white") {
+    this.flip = function(currentColor) {
+        if(currentColor === "black") {
+            $(jid).removeClass("white");
+            $(jid).addClass("black");
             color = "black";
         } else {
+            $(jid).removeClass("black");
+            $(jid).addClass("white");
             color = "white";
         }
     };

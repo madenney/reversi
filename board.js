@@ -24,27 +24,23 @@ function Board(x,y) {
                 //assigns a variable to an array of the coordinates for the individual boxes
                 var tileValue = tile.getCoords();
                 //creates checkered pattern for the individual boxes
+                var identity = tile.getId();
+                var t = $("<div>").attr("id", identity);
                 if((tileValue[0]%2===0 && tileValue[1]%2===0) || (tileValue[0]%2===1 && tileValue[1]%2===1)){
-                    var identity = tile.getId();
-                    console.log(identity);
-                    tr.append("<td class='square blackgradient' id=" + identity + "></td>");   
+                    var td = $('<td class="square blackgradient"></td>');
+                    td.append(t);
+                    tr.append(td);
                 }
                 else{
-                    var identity = tile.getId();
-                    console.log(identity);
-                    tr.append("<td class='square redgradient' id=" + identity + "></td>");   
+                    var td = $("<td class='square redgradient' ></td>");
+                    td.append(t);
+                    tr.append(td);
                 }
-
-
                 row.push(tile);
             }
             $('tbody').append(tr);
             tiles.push(row);
         }
-        console.log(tiles);
-
-
-
     };
 
     this.setup = function() {
@@ -103,6 +99,7 @@ function Board(x,y) {
         var path = [tile, nextTile];
         var step = [nextCoords[0] - tileCoords[0], nextCoords[1] - tileCoords[1]];
         for(var i = 0; i < 9; i++) { // <<<<<<<<<< Change this loop later.
+            if(!(tiles[Number(nextCoords[0]) + step[0]])) {return false;}
             var next = tiles[Number(nextCoords[0]) + step[0]][ Number(nextCoords[1]) + step[1]];
             if(!next) {return false;}
             if(next.getColor() == "none") {return false;}

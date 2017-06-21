@@ -29,7 +29,7 @@ body > * {
     100%{background-position:0% 51%}
 }
 .blackgradient{
-    background: linear-gradient(32deg, #000000, #4c4b4f);
+   #background: linear-gradient(32deg, #000000, #4c4b4f);
     background-size: 400% 400%;
     -webkit-animation: blackcheckers 23s ease infinite;
     -moz-animation: blackcheckers 23s ease infinite;
@@ -51,7 +51,7 @@ body > * {
     100%{background-position:91% 0%}
 }
 .redgradient{
-background: linear-gradient(32deg, #000000, #ff0000);
+#background: linear-gradient(32deg, #000000, #ff0000);
 background-size: 400% 400%;
 -webkit-animation: redcheckers 23s ease infinite;
 -moz-animation: redcheckers 23s ease infinite;
@@ -83,14 +83,6 @@ animation: redcheckers 23s ease infinite;
     margin-left: auto;
 }
 
-#board-container {
-    width: 800px;
-    height: 700px;
-    margin: 100px;
-    background-color: gray;
-    border: solid black 2px;
-}
-
 #board {
     margin: auto;
     background-color: limegreen;
@@ -104,13 +96,14 @@ animation: redcheckers 23s ease infinite;
 }
 
 .tile {
-    width: 50px;
+    width: 50%;
     height: 50px;
-    margin: 10px;
+    margin: auto;
     background-color: red;
     border: solid black 2px;
     border-radius: 100%;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 .white {
@@ -164,6 +157,6 @@ div h3{
 
 }
 .clickable {
-    background-color: #ffba00;
+    background-color: #ffba00!important;
 }
 
