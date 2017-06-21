@@ -1,0 +1,70 @@
+.container {
+    width: 250px;
+    height: 260px;
+    position: relative;
+    overflow:hidden;
+}
+.token {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.token div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.token .front {
+    width:100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.token .back {
+    width:100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: rotateY( 180deg );
+}
+.token .flipped {
+
+    transform: rotateY( 180deg );
+}
+
+.token{
+    width:550px;
+    transition: width 0.3s;
+    opacity: 0;
+    display:inline-block;
+    position:absolute;
+}
+.back, .front{
+    display:inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes fadeout {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+@keyframes big_small {
+    from{
+        width:200%;
+        height:200%;
+    }
+    to{
+        width:100%;
+        height:100%;
+    }
+}

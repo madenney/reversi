@@ -57,10 +57,15 @@ function Game() {
                     paths[i][j].flip(currentTurn); // This will be .flip() once that gets working
                 }
             }
+
+            // get score
             nextTurn();
         });
     };
 
+    this.getScore = function() {
+        board.getScore();
+    }
 
     this.getTurn= function() {
         return currentTurn;

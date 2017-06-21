@@ -43,6 +43,19 @@ function Board(x,y) {
         }
     };
 
+    var getScore = function() {
+        var score1 = 0;
+        var score2 = 0;
+        var arr =[];
+        for(tiles) {
+            if tile is black, score1 ++
+            if tile is white, score2 ++
+
+        }
+        push scores into arr
+        return arr
+    }
+
     this.setup = function() {
         tiles[3][3].setColor("white");
         tiles[3][4].setColor("black");
@@ -148,6 +161,11 @@ function Board(x,y) {
             }
         }
     };
+
+    var getscore
+    {
+        loop through
+    }
 
     var addWithoutRepeats = function(newTile, tileArray) {
         for(var i = 0; i < tileArray.length; i++) {
