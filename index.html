@@ -5,6 +5,8 @@
     <title>Reversi</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href = "style.css">
     <link type="text/css" rel="stylesheet" href = "animation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,15 +15,43 @@
     <script src = "tile.js"></script>
     <script>
 
-        $(document).ready(function() {
-            var game = new Game();
+
+        $(document).ready(function(){
+            $(window).on('load',function(){
+             $('#myModal').modal('show');
+            })
+
+
+          $('button').click(function(){
+            var teammate = $(this).attr('value');
+            console.log(teammate);
+            var game = new Game(teammate);
+         });
         });
 
     </script>
 </head>
 <body>
-
-    <div id = "background"></div>
+    <!--Modal initiates when the page is loaded-->
+    <div id='myModal' class='modal fade' role='dialog'>
+        <div class="modal-dialog">
+            <!--modal content-->
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h1>Choose Your Destiny</h1>
+                </div>
+                <div class='modal-body col-xs-12'>
+                    <div id="rebeltitle" class='col-xs-2'>REBEL
+                    <button type='button' class='btn btn-default' data-dismiss="modal" id='rebelbutton' value='white'></button>
+                    </div>
+                    <p class='col-xs-8 cascade'>How to play Reversi!<p>
+                    <div id="empiretitle" class='col-xs-2'>EMPIRE
+                    <button type='button' class='btn btn-default' data-dismiss='modal' id='empirebutton' value='black'></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h1 class='title'> REVERSI </h1>
     <div class="col-xs-2" id="player1">
