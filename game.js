@@ -6,8 +6,7 @@ function Game() {
 
     var board;
 
-    var rebelScore = 0;
-    var empireScore = 0;
+    var score = [2,2];
     var legalTiles;
     var currentTurn = "black";
 
@@ -38,7 +37,11 @@ function Game() {
         else{currentTurn = "black";}
         doTurn();
     };
+    var nowScore = function(){
+        $('#rebelScore').text(score[0]);
+        $('#empireScore').text(score[1]);
 
+    };
     var setClickListener = function(paths) {
         var tile = $(paths[0][0].getJId());
         var tileParent = tile.parent();
@@ -57,15 +60,14 @@ function Game() {
                     paths[i][j].flip(currentTurn); // This will be .flip() once that gets working
                 }
             }
+            score = board.updateScore();
+            nowScore();
             nextTurn();
         });
     };
 
 
-    this.getTurn= function() {
-        return currentTurn;
-    };
-
+    nowScore();
     initialize();
     doTurn();
 

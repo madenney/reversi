@@ -11,6 +11,7 @@ function Board(x,y) {
     var cols = y;
     var tiles = [];
 
+
     var initialize = function() {
         console.log("Initializing Board Object");
 
@@ -42,6 +43,7 @@ function Board(x,y) {
             tiles.push(row);
         }
     };
+
 
     this.setup = function() {
         tiles[3][3].setColor("white");
@@ -157,6 +159,20 @@ function Board(x,y) {
         }
         tileArray.push(newTile);
     };
-
+    this.updateScore = function(){
+        var arr = [0,0];
+        for(var i = 0; i<tiles.length; i++){
+            for(var j = 0; j<tiles[0].length; j++){
+                if(tiles[i][j].getColor() == 'black'){
+                    arr[0]++;
+                }
+                else if(tiles[i][j].getColor() === 'white'){
+                    arr[1]++;
+                }
+            }
+        }
+        console.log(arr);
+        return arr;
+    };
     initialize();
 }
