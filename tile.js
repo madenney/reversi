@@ -12,27 +12,16 @@ function Tile(x,y) {
 
     };
 
-    var putDown = function() {
-
-    };
-
     this.setColor = function(inputColor) {
-        // $(jid).removeClass("white");
-        // $(jid).removeClass("black");
-        // if(inputColor == "white") {
-        //     color = inputColor;
-        //     $(jid).addClass("white").addClass("tile");
-        // }
-        // if(inputColor == "black") {
-        //     color = inputColor;
-        //     $(jid).addClass("black").addClass("tile");
-        // }
-        var box = $(jid);
-        if(inputColor === "black") {
-            putDown1();
-        } else {
-            putDown2();
+        if(inputColor == "white") {
+            color = inputColor;
+            $(jid).addClass("white").addClass("tile");
         }
+        if(inputColor == "black") {
+            color = inputColor;
+            $(jid).addClass("black").addClass("tile");
+        }
+
     };
 
     this.flip = function(currentColor) {
@@ -68,50 +57,4 @@ function Tile(x,y) {
     };
 
     initialize();
-}
-
-function animationClick(){
-    console.log(“clicked”);
-    if(currentTurn === “black”){
-        $(this).click(putDown1());
-    }else if(currentTurn === “white”){
-        $(this).click(putDown2());
-
-    }
-
-}
-
-function putDown1(){
-    $(“.token”).on(‘click’, function(){
-        $(this).width(250);
-        $(this).css(‘animation’,‘fadeout 2s’);
-        $(this).css(‘opacity’,‘1’);
-        $(this).children(“.front”).prepend(‘<img id=“theImg” src=“reversi_assets/white.png” />‘);
-        $(this).children(“.back”).prepend(‘<img id=“theImg” src=“reversi_assets/black.png” />‘);
-    });
-}
-
-
-function putDown2(){
-    $(“.token”).on(‘click’, function(){
-        var newToken = creatToken();
-        $(this).append(newToken);
-        $(this).width(250);
-        $(this).css(‘animation’,‘fadeout 2s’);
-        $(this).css(‘opacity’,‘1’);
-        $(this).children(“.front”).prepend(‘<img id=“theImg” src=“reversi_assets/black.png” />‘);
-        $(this).children(“.back”).prepend(‘<img id=“theImg” src=“reversi_assets/white.png” />‘);
-    });
-}
-
-function creatToken(){
-    var x =$(‘<div>‘).addClass(‘front’);
-    var y =$(‘<div>‘).addClass(‘back’);
-    var z =$(‘<div>‘).addClass(‘token’);
-    var plz =$(‘<section>‘).addClass(‘container’);
-    z.append(x);
-    z.append(y);
-    plz.append(z)
-    return plz;
-
 }

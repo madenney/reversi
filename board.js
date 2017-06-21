@@ -11,6 +11,7 @@ function Board(x,y) {
     var cols = y;
     var tiles = [];
 
+
     var initialize = function() {
         console.log("Initializing Board Object");
 
@@ -42,19 +43,6 @@ function Board(x,y) {
             tiles.push(row);
         }
     };
-
-    var getScore = function() {
-        var score1 = 0;
-        var score2 = 0;
-        var arr =[];
-        for(tiles) {
-            if tile is black, score1 ++
-            if tile is white, score2 ++
-
-        }
-        push scores into arr
-        return arr
-    }
 
     this.setup = function() {
         tiles[3][3].setColor("white");
@@ -162,11 +150,6 @@ function Board(x,y) {
         }
     };
 
-    var getscore
-    {
-        loop through
-    }
-
     var addWithoutRepeats = function(newTile, tileArray) {
         for(var i = 0; i < tileArray.length; i++) {
             if(tileArray[i] === newTile) {
@@ -175,6 +158,19 @@ function Board(x,y) {
         }
         tileArray.push(newTile);
     };
-
+    this.getScore = function(){
+        var arr = [0,0];
+        for(var i = 0; i < tiles.length; i++){
+            for(var j = 0; j < tiles[0].length; j++){
+                if(tiles[i][j].getColor() === 'black'){
+                    arr[0]++;
+                }
+                else if(tiles[i][j].getColor() === 'white'){
+                    arr[1]++;
+                }
+            }
+        }
+        return arr;
+    };
     initialize();
 }
