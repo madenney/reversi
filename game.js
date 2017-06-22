@@ -10,6 +10,7 @@ function Game(playerColor) {
     var score = [2,2];
     var legalTiles;
     var currentTurn = playerColor;
+    var pcolor = playerColor;
     reset = false;
 
     // Initialize the game
@@ -20,13 +21,37 @@ function Game(playerColor) {
 
     // Reset Game
     var resetGame = function() {
-        console.log("GAME OVER");
+        if(score[0] == score[1]){
+            window.location.href = "tie.html";
+        }
+        if(pcolor === "black") {
+            if(score[0] > score[1]) {
+                window.location.href = "win.html";
+            } else {
+                window.location.href = "lose.html";
+            }
+        } else {
+            if(score[1] > score[0]) {
+                window.location.href = "win.html";
+            } else {
+                window.location.href = "lose.html";
+            }
+        }
     };
 
     // Switch Turn
     var switchTurn = function() {
-        if(currentTurn === "white") { currentTurn = "black";}
-        else(currentTurn = "white")
+        if(currentTurn === "white") {
+            currentTurn = "black";
+            $("#player1").addClass("pathway");
+            $("#player2").removeClass("pathway");
+        }
+        else{
+            currentTurn = "white";
+            $("#player2").addClass("pathway");
+            $("#player1").removeClass("pathway");
+        }
+
     };
 
     // Update Score
@@ -59,9 +84,12 @@ function Game(playerColor) {
 
 
     var botTurn = function() {
+
+        switchTurn();
+
         // Put this in a set timeout to make it look like the bot is thinking
+        var thinkTime = Math.floor(Math.random() * 2500) + 1000;
         setTimeout(function() {
-            switchTurn();
             // Get legal tiles
             var choices = board.getLegalTiles(currentTurn);
 
@@ -101,7 +129,6 @@ function Game(playerColor) {
                 }
                 // If no paths have more than one tile, then choose randomly
                 if(best == -1) {
-                    console.log("Choosing randomly");
                     best = Math.floor(Math.random() * choices.length);
                 }
             }
@@ -117,7 +144,7 @@ function Game(playerColor) {
             score = board.getScore();
             updateScore();
             doTurn();
-        }, 1000); // Change this value to make the bot think at different speeds
+        }, thinkTime); // Change this value to make the bot think at different speeds
     };
 
     // Set click listeners onto legal tiles

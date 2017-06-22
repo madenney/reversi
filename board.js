@@ -204,6 +204,7 @@ function Board(x,y) {
         return arr;
     };
 
+
     // Return the number of occupied tiles
     this.getOccupiedCount = function() {
         return getOccupiedTiles().length;
