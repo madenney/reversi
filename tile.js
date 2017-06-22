@@ -14,10 +14,12 @@ function Tile(x,y) {
         if(inputColor == "white") {
             color = inputColor;
             $(jid).addClass("white").addClass("tile");
+            fadeEffect();
         }
         if(inputColor == "black") {
             color = inputColor;
             $(jid).addClass("black").addClass("tile");
+            fadeEffect();
         }
 
     };
@@ -33,6 +35,10 @@ function Tile(x,y) {
             $(jid).addClass("white");
             color = "white";
         }
+    };
+
+    function fadeEffect() {
+        $(jid).css('animation','fadein 0.5s');
     };
 
     // All functions below are self explanatory

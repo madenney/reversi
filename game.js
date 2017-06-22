@@ -43,13 +43,13 @@ function Game(playerColor) {
     var switchTurn = function() {
         if(currentTurn === "white") {
             currentTurn = "black";
-            $("#player1").addClass("pathway");
-            $("#player2").removeClass("pathway");
+            $("#player1").addClass("turn").removeClass("not-turn");
+            $("#player2").removeClass("turn").addClass("not-turn");
         }
         else{
             currentTurn = "white";
-            $("#player2").addClass("pathway");
-            $("#player1").removeClass("pathway");
+            $("#player2").addClass("turn").removeClass("not-turn");
+            $("#player1").removeClass("turn").addClass("not-turn");
         }
 
     };

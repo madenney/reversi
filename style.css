@@ -74,7 +74,7 @@ body > * {
     height: 420px;
     border: 4px #FFB03F solid;
     background-color: black;
-    opacity: 0.75;
+    #opacity: 0.75;
 }
 #player2{
     position: relative;
@@ -83,7 +83,17 @@ body > * {
     height: 420px;
     border: 4px #C50C2C solid;
     background-color: black;
-    opacity: 0.60;
+    #opacity: 0.60;
+}
+
+.turn {
+    box-shadow: 0 0 80px white;
+    opacity: 1;
+}
+
+.not-turn {
+    opacity: 0.75;
+    box-shadow: none;
 }
 #board-container {
     width: 45%;
@@ -250,8 +260,8 @@ div h3{
 }
 #empirebutton{
     background-image: url('https://vignette3.wikia.nocookie.net/starwars/images/3/37/Vader_TFU.jpg/revision/latest/scale-to-width-down/210?cb=20081111171655');
-    background-position: 24%95%;
-    background-size: 100%;
+    background-position: 24% 68%;
+    background-size: 122%;
     background-color: black;
     height: 40vh;
     background-repeat: no-repeat;
@@ -311,7 +321,14 @@ img{
     display: none;
 }
 
-
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 
 
 
