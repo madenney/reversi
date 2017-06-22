@@ -167,14 +167,22 @@ div h3{
     box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
 }
 /*Modal CSS*/
-
+.vertical-alignment-help{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center{
+    display: table-cell;
+    vertical-align: middle;
+}
 .modal-content{
     background-image: url('https://68.media.tumblr.com/1ee469a13252afb71de6d7670ea373c0/tumblr_nufjxs8TIs1suieauo1_500.gif');
     background-size: cover;
     margin: auto;
-    height: 80vh;
-    width: 83vw;
-    right: 38%;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
 }
 .modal-header h1{
     text-align: center;
@@ -187,12 +195,15 @@ div h3{
     display: inline-block;
     float: left;
     text-align: center;
+    color: yellow;
+    font-weight: bold;
 }
 #empiretitle{
     display: inline;
-    text-align: center;
     bottom: 15%;
-    float: top;
+    float: right;
+    color: yellow;
+    font-weight: bold;
 
 }
 #rebelbutton{
@@ -204,9 +215,7 @@ div h3{
     color: black;
     font-weight: bold;
     width: 97px;
-
-
-
+    float: left;
 }
 #empirebutton{
     background-image: url('https://vignette3.wikia.nocookie.net/starwars/images/3/37/Vader_TFU.jpg/revision/latest/scale-to-width-down/210?cb=20081111171655');
@@ -220,8 +229,35 @@ div h3{
     width: 97px;
 
 }
-.cascade{
-    text-align: center;
+
+/*Modal Text SCrolling*/
+.star-wars{
+    perspective: 400px;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 100%;
+    font-weight: 200;
+    line-height: 75%;
+}
+.crawl{
+    top: 9999px;
+    top: -100px;
+    transform-origin: 50% 100%;
+}
+@keyframes crawl{
+    0%{
+        top: 0;
+        transform: rotateX(25deg) translateZ(175px) translateY(600px);
+    }
+    100%{
+        top: -6000px;
+        transform: rotateX(25deg) translateZ(-2500px);
+    }
+}
+.crawl{
+    position: relative;
+    transform-origin: 50% 100%;
+    animation: crawl 140s linear;
 }
 
 
