@@ -237,7 +237,9 @@ div h3{
 }
 #rebelbutton{
     background-image: url('https://s-media-cache-ak0.pinimg.com/originals/27/5b/ed/275bedfe662fc545fa77d32e511b0609.jpg');
-    background-position: center;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #252527;
     background-size: 120%;
     height: 40vh;
     margin-left: 5%;
@@ -263,7 +265,7 @@ div h3{
 .star-wars{
     background-image: url('https://i.ytimg.com/vi/EZ7la-hMNuk/maxresdefault.jpg');
     display: flex;
-    height: 800px;
+    height: 100vh;
     perspective: 400px;
     color: #feda4a;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -271,6 +273,12 @@ div h3{
     font-size: 500%;
     font-weight: 600;
     line-height: 150%;
+}
+
+#howtoplay {
+    color: #feda4a;
+    text-align: center;
+    font-size: 100px;
 }
 .crawl{
     top: 9999px;
@@ -302,10 +310,7 @@ img{
 .hidden{
     display: none;
 }
-.title h1{
-    color: #feda4a;
-    font-size: 200%;
-}
+
 
 
 
