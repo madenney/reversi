@@ -33,20 +33,41 @@
 </head>
 <body>
     <!--Modal initiates when the page is loaded-->
-    <div id='myModal' class='modal fade' role='dialog'>
-        <div class="modal-dialog">
+    <div id='myModal' class='modal fade vertical-alignment-help' role='dialog'>
+        <div class="modal-dialog vertical-align-center">
             <!--modal content-->
             <div class='modal-content'>
                 <div class='modal-header'>
                     <h1>Choose Your Destiny</h1>
                 </div>
                 <div class='modal-body col-xs-12'>
-                    <div id="rebeltitle" class='col-xs-2'>REBEL
-                    <button type='button' class='btn btn-default' data-dismiss="modal" id='rebelbutton' value='white'></button>
+                    <div id="rebeltitle" class='col-xs-2'>REBELS
+                    <button type='button' class='btn btn-default col-xs-12' data-dismiss="modal" id='rebelbutton' value='white'></button>
                     </div>
-                    <p class='col-xs-8 cascade'>How to play Reversi!<p>
+                    <div class='col-xs-8 cascade'>
+                        <section class='star-wars'>
+                            <div class='crawl'>
+                                <div class='title'>
+                                    <h2>How 2 Play</h2>
+                                </div>
+                                <ol>
+                                    <li>Black always moves first!</li>
+                                    <li>If on your turn you cannot outflank and flip at least one opposing disc, your turn is forfeited and your opponent moves again. However, if a move is available to you, you may not forfeit your turn</li>
+                                    <li>A disc may outflank any number of discs in one or more rows in any number of directions at the same time - horizontally, vertically or diagonally. (A row is defined as one or more discs in a continuous straight line ).</li>
+                                    <li>You may not skip over your own colour disc to outflank an opposing disc</li>
+                                    <li> Discs may only be outflanked as a direct result of a move and must fall in the direct line of the disc placed down</li>
+                                    <li>All discs outflanked in any one move must be flipped, even if it is to the player's advantage not to flip them at all.</li>
+                                    <li>A player who flips a disc which should not have been turned may correct the mistake as long as the opponent has not made a subsequent move. If the opponent has already moved, it is too late to change and the disc(s) remain as is.</li>
+                                    <li>Once a disc is placed on a square, it can never be moved to another square later in the game.</li>
+                                    <li>If a player runs out of discs, but still has an opportunity to outflank an opposing disc on his or her turn, the opponent must give the player a disc to use. (This can happen as many times as the player needs and can use a disc).</li>
+                                    <li>When it is no longer possible for either player to move, the game is over. Discs are counted and the player with the majority of his or her colour discs on the board is the winner.</li>
+                                </ol>
+
+                            </div>
+                        </section>
+                    </div>
                     <div id="empiretitle" class='col-xs-2'>EMPIRE
-                    <button type='button' class='btn btn-default' data-dismiss='modal' id='empirebutton' value='black'></button>
+                    <button type='button' class='btn btn-default col-xs-12' data-dismiss='modal' id='empirebutton' value='black'></button>
                     </div>
                 </div>
             </div>
