@@ -185,7 +185,6 @@ div h3{
 }
 
 .pathway {
-    #background-color: red;
     -webkit-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
     -moz-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
     box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
@@ -201,7 +200,8 @@ div h3{
     vertical-align: middle;
 }
 .modal-content{
-    background-image: url('https://68.media.tumblr.com/1ee469a13252afb71de6d7670ea373c0/tumblr_nufjxs8TIs1suieauo1_500.gif');
+    background-image: url('http://img15.deviantart.net/f3a7/i/2015/319/2/3/star_wars_yin_yang_desktop_wallpaper_by_swmand4-d7m8qpt.jpg');
+    background-position: center;
     background-size: cover;
     margin: auto;
     width: inherit;
@@ -211,57 +211,65 @@ div h3{
 .modal-header h1{
     text-align: center;
     font-family: san-serif Serif-Gothic;
-    color: yellow;
+    color: rgb(255,176,63);
     font-weight: bold;
     font-size: 55px;
+    text-shadow: -2px -2px #000000;
+
 }
 #rebeltitle{
     display: inline-block;
     float: left;
     text-align: center;
-    color: yellow;
+    color: rgb(255,176,63);
     font-weight: bold;
+    text-shadow: -2px -2px #000000;
+;
 }
 #empiretitle{
     display: inline;
     bottom: 15%;
     float: right;
-    color: yellow;
+    color: rgb(255,176,63);
     font-weight: bold;
-
+    text-shadow: -2px -2px #000000;
 }
 #rebelbutton{
     background-image: url('https://s-media-cache-ak0.pinimg.com/originals/27/5b/ed/275bedfe662fc545fa77d32e511b0609.jpg');
     background-position: center;  
-    background-size: 250%;
+    background-size: 120%;
     height: 40vh;
     margin-left: 5%;
     color: black;
     font-weight: bold;
-    width: 97px;
+    width: 200px;
     float: left;
 }
 #empirebutton{
     background-image: url('https://vignette3.wikia.nocookie.net/starwars/images/3/37/Vader_TFU.jpg/revision/latest/scale-to-width-down/210?cb=20081111171655');
     background-position: 24%95%;
-    background-size: 200%;
+    background-size: 100%;
     background-color: black;
     height: 40vh;
     background-repeat: no-repeat;
     margin-right: 5%;
     float: right;
-    width: 97px;
+    width: 200px;
 
 }
 
 /*Modal Text SCrolling*/
 .star-wars{
+    background-image: url('https://i.ytimg.com/vi/EZ7la-hMNuk/maxresdefault.jpg');
+    display: flex;
+    height: 800px;
     perspective: 400px;
     color: #feda4a;
     font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 100%;
-    font-weight: 200;
-    line-height: 75%;
+    letter-spacing: 6px;
+    font-size: 500%;
+    font-weight: 600;
+    line-height: 150%;
 }
 .crawl{
     top: 9999px;
@@ -271,7 +279,7 @@ div h3{
 @keyframes crawl{
     0%{
         top: 0;
-        transform: rotateX(25deg) translateZ(175px) translateY(600px);
+        transform: rotateX(25deg) translateZ(-100px) translateY(600px);
     }
     100%{
         top: -6000px;
@@ -281,11 +289,22 @@ div h3{
 .crawl{
     position: relative;
     transform-origin: 50% 100%;
-    animation: crawl 140s linear;
+    animation: crawl 75s linear;
 }
+img{
+    height: inherit;
+    width: inherit;
+    display: block;
+    margin: 0 auto;
 
-
-
+}
+.hidden{
+    display: none;
+}
+.title h1{
+    color: #feda4a;
+    font-size: 200%;
+}
 
 
 
