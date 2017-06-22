@@ -9,6 +9,12 @@ body {
     -o-background-size: cover;
     background-position: center top;
 }
+
+@font-face {
+    font-family: “Starfont”;
+    src: url('assets/starwarfont.TTF');
+}
+
 @media screen and (max-width: 1400px) {
     body {
         background-size: 100%;
@@ -111,8 +117,6 @@ body > * {
     width: 80%;
     height: 80%;
     margin: auto;
-    #background-color: red;
-    #border: solid black 2px;
     border-radius: 100%;
     box-sizing: border-box;
     display: inline-block;
@@ -122,7 +126,6 @@ body > * {
     background-image: url("assets/white.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 7.5vh;
     border: solid black;
 }
 
@@ -130,7 +133,6 @@ body > * {
     background-image: url("assets/black1.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 7.5vh;
     border: solid black;
 }
 
@@ -144,10 +146,10 @@ body > * {
     width: 16vw;
     background-color: white;
     border: 1px black solid;
-    overflow: hidden;
+    #overflow: hidden;
 }
 .title{
-    font-family: myFont;
+    font-family: Starfont,sans-serif;
     font-weight: bold;
     font-size: 60px;
     text-align: center;
@@ -168,12 +170,14 @@ div h3{
     border: 2px #FFB03F solid;
     padding: 20px;
     font-size: 30px;
+    font-family: Starfont,sans-serif;
 }
 #empireScore{
     color: white;
     border: 2px #C50C2C solid;
     padding: 20px;
     font-size: 30px;
+    font-family: Starfont,sans-serif;
 
 }
 .clickable {
