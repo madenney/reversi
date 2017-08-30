@@ -1,8 +1,4 @@
-/**
- * Created by Matt on 6/19/2017.
- */
 
-// Game Object
 function Game(playerColor) {
 
     // Declare some variables
@@ -56,8 +52,8 @@ function Game(playerColor) {
 
     // Update Score
     var updateScore = function(){
-        $('#rebelScore').text(score[0]);
-        $('#empireScore').text(score[1]);
+        $('.rebelScore').text(score[0]);
+        $('.empireScore').text(score[1]);
     };
 
     // Player Turn

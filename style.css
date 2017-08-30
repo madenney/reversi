@@ -1,179 +1,53 @@
 body {
-    font-size: 0px;
     background-color: black;
     background-image: url("assets/background.jpg");
+    background-size: 1800px 100vh;
     background-repeat: no-repeat;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-position: center top;
+    height: 100vh;
 }
+
 
 @font-face {
     font-family: “Starfont”;
     src: url('assets/starwarfont.TTF');
 }
 
-@media screen and (max-width: 1400px) {
-    body {
-        background-size: 100%;
-    }
-}
-body > * {
-    font-size: 12px;
+.hidden{
+    display: none;
 }
 
-@-webkit-keyframes blackcheckers {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+#game-content{
+    width: 97vw;
+    height: 97vh;
 }
-@-moz-keyframes blackcheckers {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+
+.player-container{
+    vertical-align: top;
+    width: 19.5%;
+    height: 70vh;
+    box-sizing: border-box;
+    display: inline-block;
 }
-@keyframes blackcheckers { 
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
-}
-.blackgradient{
-    background: linear-gradient(32deg, #000000, #4c4b4f);
-    background-size: 400% 400%;
-    -webkit-animation: blackcheckers 23s ease infinite;
-    -moz-animation: blackcheckers 23s ease infinite;
-    animation: blackcheckers 23s ease infinite;
-}
-@-webkit-keyframes redcheckers {
-    0%{background-position:91% 0%}
-    50%{background-position:10% 100%}
-    100%{background-position:91% 0%}
-}
-@-moz-keyframes redcheckers {
-    0%{background-position:91% 0%}
-    50%{background-position:10% 100%}
-    100%{background-position:91% 0%}
-}
-@keyframes redcheckers { 
-    0%{background-position:91% 0%}
-    50%{background-position:10% 100%}
-    100%{background-position:91% 0%}
-}
-.redgradient{
-    background: linear-gradient(32deg, #000000, #ff0000);
-    background-size: 400% 400%;
-    -webkit-animation: redcheckers 23s ease infinite;
-    -moz-animation: redcheckers 23s ease infinite;
-    animation: redcheckers 23s ease infinite;
-}
-#player1{
-    position: relative;
-    left: 10%;
+
+.player-box{
     height: 420px;
-    border: 4px #FFB03F solid;
+    width: 75%;
+    margin-left: 8%;
+    margin-top: 85px;
     background-color: black;
-    #opacity: 0.75;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}
+
+#player1{
+    border: 4px #FFB03F solid;
+    color: #FFB03F;
 }
 #player2{
-    position: relative;
-    float: right;
-    right: 10%;
-    height: 420px;
     border: 4px #C50C2C solid;
-    background-color: black;
-    #opacity: 0.60;
-}
-
-.turn {
-    box-shadow: 0 0 80px white;
-    opacity: 1;
-}
-
-.not-turn {
-    opacity: 0.75;
-    box-shadow: none;
-}
-#board-container {
-    width: 45%;
-    position: fixed;
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#board {
-    margin: auto;
-    background-color: limegreen;
-}
-
-
-.tile-container {
-    box-sizing: border-box;
-    border: solid black 2px;
-    display: inline-block;
-}
-
-.buffer {
-    width: 100%;
-    height: 100%;
-    padding-top: 10%;
-    text-align: center;
-}
-
-.tile {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    border-radius: 100%;
-    box-sizing: border-box;
-    display: inline-block;
-}
-
-.white {
-    background-image: url("assets/white1.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    border: solid black;
-}
-
-.black {
-    background-image: url("assets/black2.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    border: solid black;
-}
-
-.row{
-    height: auto;
-    max-height: 400px;
-    width: 85%;
-}
-.square{
-    height: 9vh;
-    width: 16vw;
-    background-color: white;
-    border: 1px black solid;
-    #overflow: hidden;
-}
-.title{
-    font-family: Starfont,sans-serif;
-    font-weight: bold;
-    font-size: 60px;
-    text-align: center;
-    background: -webkit-linear-gradient(#ff0000,#4c4b4f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-}
-div h3{
-    text-align: center;
-    color: white;
-}
-#rebelScore, #empireScore{
-    text-align: center;
+    color: #C50C2C;
 }
 #rebelScore{
     color: white;
@@ -188,8 +62,90 @@ div h3{
     padding: 20px;
     font-size: 30px;
     font-family: Starfont,sans-serif;
-
 }
+.turn {
+    box-shadow: 0 0 80px white;
+    opacity: 1;
+}
+
+.not-turn {
+    opacity: 0.75;
+    box-shadow: none;
+}
+#board-container {
+    width: 60%;
+    height: 70vh;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0px 50px;
+    font-size: 0px;
+}
+
+#board {
+    width: 100%;
+    height: 100%;
+    background-color: limegreen;
+    margin: auto;
+}
+
+.square{
+    display: inline-block;
+    width: 12.5%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px black solid;
+    padding: 1%;
+}
+
+.blacksquare{
+    background-color: #4d4d4d;
+}
+
+.redsquare{
+    background-color:darkred;
+}
+
+.row{
+    height: 12.5%;
+}
+
+.tile-container {
+    width:100%;
+    height:100%;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+}
+
+.white {
+    background-image: url("assets/white1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: solid black;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+.black {
+    background-image: url("assets/black2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.title{
+    font-family: Starfont,sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    background: -webkit-linear-gradient(#ff0000,#4c4b4f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .clickable {
     background-color: #ffba00!important;
 }
@@ -198,127 +154,6 @@ div h3{
     -webkit-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
     -moz-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
     box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
-}
-
-/*Modal CSS*/
-.vertical-alignment-help{
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-.vertical-align-center{
-    display: table-cell;
-    vertical-align: middle;
-}
-.modal-content{
-    background-image: url('http://img15.deviantart.net/f3a7/i/2015/319/2/3/star_wars_yin_yang_desktop_wallpaper_by_swmand4-d7m8qpt.jpg');
-    background-position: center;
-    background-size: cover;
-    margin: auto;
-    width: inherit;
-    height: inherit;
-    overflow: hidden;
-}
-.modal-header h1{
-    text-align: center;
-    font-family: san-serif Serif-Gothic;
-    color: rgb(255,176,63);
-    font-weight: bold;
-    font-size: 55px;
-    text-shadow: -2px -2px #000000;
-
-}
-#rebeltitle{
-    display: inline-block;
-    float: left;
-    text-align: center;
-    color: rgb(255,176,63);
-    font-weight: bold;
-    text-shadow: -2px -2px #000000;
-;
-}
-#empiretitle{
-    display: inline;
-    bottom: 15%;
-    float: right;
-    color: rgb(255,176,63);
-    font-weight: bold;
-    text-shadow: -2px -2px #000000;
-}
-#rebelbutton{
-    background-image: url('https://s-media-cache-ak0.pinimg.com/originals/27/5b/ed/275bedfe662fc545fa77d32e511b0609.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #252527;
-    background-size: 120%;
-    height: 40vh;
-    margin-left: 5%;
-    color: black;
-    font-weight: bold;
-    width: 200px;
-    float: left;
-}
-#empirebutton{
-    background-image: url('https://vignette3.wikia.nocookie.net/starwars/images/3/37/Vader_TFU.jpg/revision/latest/scale-to-width-down/210?cb=20081111171655');
-    background-position: 24% 68%;
-    background-size: 122%;
-    background-color: black;
-    height: 40vh;
-    background-repeat: no-repeat;
-    margin-right: 5%;
-    float: right;
-    width: 200px;
-
-}
-
-/*Modal Text SCrolling*/
-.star-wars{
-    background-image: url('https://i.ytimg.com/vi/EZ7la-hMNuk/maxresdefault.jpg');
-    display: flex;
-    height: 100vh;
-    perspective: 400px;
-    color: #feda4a;
-    font-family: 'Pathway Gothic One', sans-serif;
-    letter-spacing: 6px;
-    font-size: 500%;
-    font-weight: 600;
-    line-height: 150%;
-}
-
-#howtoplay {
-    color: #feda4a;
-    text-align: center;
-    font-size: 100px;
-}
-.crawl{
-    top: 9999px;
-    top: -100px;
-    transform-origin: 50% 100%;
-}
-@keyframes crawl{
-    0%{
-        top: 0;
-        transform: rotateX(25deg) translateZ(-100px) translateY(600px);
-    }
-    100%{
-        top: -6000px;
-        transform: rotateX(25deg) translateZ(-2500px);
-    }
-}
-.crawl{
-    position: relative;
-    transform-origin: 50% 100%;
-    animation: crawl 75s linear;
-}
-img{
-    height: inherit;
-    width: inherit;
-    display: block;
-    margin: 0 auto;
-
-}
-.hidden{
-    display: none;
 }
 
 @keyframes fadein {
@@ -330,10 +165,147 @@ img{
     }
 }
 
+/* ------------- Choose Character Modal ----------- */
+/* ------------------------------------------------ */
 
 
+#choose-destiny-modal{
+    font-family: Starfont;
+    width: 50vw;
+    height: 53vh;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    background-image: url('assets/modal_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 1200px 100%;
+    background-position: center top;
+    border: solid black 4px;
+}
 
+.modal-header{
+    text-align:center;
+    height: 15%;
+}
 
+#modal-body {
+    height: 84%;
+    border-top: solid black 3px;
+}
+
+.char-side{
+    width: 49%;
+    display: inline-block;
+    height: 100%;
+}
+
+.char-title{
+    text-align: center;
+    font-size: 40px;
+}
+
+.character{
+    margin: 10%;
+    margin-top: 3px;
+    width: 80%;
+    height: 80%;
+    border: solid black 3px;
+    border-radius: 4px;
+}
+
+.character:hover{
+    cursor: pointer;
+    border: solid green 3px;
+}
+
+.character img {
+    height: 100%;
+    width: 100%;
+}
+
+#modal-rebel{
+    float: left;
+}
+#modal-empire{
+    float: right;
+}
+
+#smaller-score{
+    margin-top: 30px;
+    display:none;
+    height: auto;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.smaller-player-box{
+    height: 16vh;
+    background-color: black;
+    font-size: 30px;
+    color: white;
+    margin-left: 11%;
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+    border: solid pink 2px;
+}
+
+/* ------------- Mobile Responsiveness ------------ */
+/* ------------------------------------------------ */
+
+@media only screen and (max-width: 2500px) {
+    #board{
+        width: 700px;
+        height: 700px;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    #board{
+        width: 600px;
+        height: 600px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #board{
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #board-container{
+        padding: 0px;
+        width: 100vw;
+    }
+    #choose-destiny-modal{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+    .player-container{
+        display: none;
+    }
+    #smaller-score{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #board{
+        width: 300px;
+        height: 300px;
+    }
+    #choose-destiny-modal{
+        height: 35vh;
+    }
+    .character{
+        height: 55%;
+    }
+    .char-title{
+        font-size: 30px;
+    }
+    .smaller-player-box{
+        font-size: 17px;
+        height: 13vh;
+    }
+}
 
 
 
